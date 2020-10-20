@@ -34,3 +34,17 @@ void SingleLinked::append(int ndat){
     last->next = newNode;
     return;
 }
+
+void SingleLinked::push(int ndat){
+    Node* newNode = new Node();
+
+    newNode->data = ndat;
+    newNode->next = this->list;
+    
+    this->list = newNode;
+}
+
+
+
+
+

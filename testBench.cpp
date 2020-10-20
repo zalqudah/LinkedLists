@@ -15,6 +15,9 @@ int main(){
     list.append(3);
     list.append(4);
     out << "Append: " << list;
-    out << "This is some spare data :)";
+
+    list.push(-1);
+    list.push(-2);
+    out << "Pushed: " << list;
     out.close();
 }
