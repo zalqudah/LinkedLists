@@ -41,8 +41,9 @@ void SingleLinked::push(int ndat){
     Node* newNode = new Node();
     newNode->data = ndat;
     newNode->next = this->list;
+    last = newNode;
     
-    this->list = newNode;
+    this->list = last;
 }
 
 
