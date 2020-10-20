@@ -13,12 +13,16 @@ class SingleLinked{
         void append(int ndat);
         void push(int ndat);
         //void insertAfter(Node* prev, int ndat);
-        friend std::ostream &operator<< (std::ostream &out, SingleLinked &L){
-            while(L.list != NULL){
-                out << L.list->data << " ";
-                L.list = L.list->next;
+        friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
+            int n = 0;
+            Node* ll = L.list;
+            while(ll != NULL){
+                out << ll->data << " ";
+                ll = ll->next;
+                n++;
             }
             out << std::endl;
+            out << "list len: " << n << std::endl;
             return out;
         }
 };
