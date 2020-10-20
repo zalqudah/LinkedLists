@@ -19,6 +19,17 @@ int main(){
     list.push(-1);
     list.push(-2);
     out << "Pushed: " << list;
-    //OUTPUT should be  Pushed: -2 -1 0 1 2 3 4
+    /*
+    //         loc        data
+        list.insert(3, 777);
+
+    //    broke system on local
+    //    output continued forever
+
+        out << "Insert: " << list;
+
+
+
+    */
     out.close();
 }

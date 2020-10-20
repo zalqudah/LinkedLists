@@ -46,7 +46,7 @@ void SingleLinked::push(int ndat){
     this->list = last;
 }
 
-/*void SingleLinked::insert(int loc, int ndat){
+void SingleLinked::insert(int loc, int ndat){
     Node* temp = this->list;
 
     Node* newNode = new Node();
@@ -57,15 +57,20 @@ void SingleLinked::push(int ndat){
         this->list = newNode;
         return;
     }
-
-    int iter = 0;
-    while((temp->next != NULL) && (iter < loc-1)){
-        temp = temp->next;
-        iter++;
-    }
-    newNode->next = temp;
-    temp->next = newNode;
-}*/
+    /* Extract list after loc *//*
+     -------  Next(int loc) ------
+    list: A B C D E F G
+    loc 3
+    returns:  D E F G 
+    */
+    newNode->next = Next(loc);
+    this->list = newNode;
+    /* Place node at loc *//*
+    list: A B C D E F G
+    node: data: X loc: 3
+    new list: A B C X D E F G
+    */
+}
 
 Node* SingleLinked::Next(int loc){
     int iter = 0;

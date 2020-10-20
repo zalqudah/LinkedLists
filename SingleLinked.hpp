@@ -7,13 +7,13 @@
 class SingleLinked{
     private:
         Node* list;
+        Node* Next(int loc);
     public:
         SingleLinked();
         ~SingleLinked();
         void append(int ndat);
         void push(int ndat);
-       // void insert(int loc, int ndat);
-        Node* Next(int loc);
+        void insert(int loc, int ndat);
 
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
             int n = 0;
