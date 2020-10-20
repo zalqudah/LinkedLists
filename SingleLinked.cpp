@@ -36,10 +36,11 @@ void SingleLinked::append(int ndat){
 }
 
 void SingleLinked::push(int ndat){
-    Node* newNode = new Node();
+    Node* last = this->list;
 
+    Node* newNode = new Node();
     newNode->data = ndat;
-    newNode->next = this->list;
+    newNode->next = last;
     
     this->list = newNode;
 }
