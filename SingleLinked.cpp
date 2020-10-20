@@ -47,14 +47,15 @@ void SingleLinked::push(int ndat){
 }
 
 void SingleLinked::insert(int loc, int ndat){
+    Node* temp = list;
     Node* curr;
     Node* newNode = new Node(ndat);
     for(int i = 0; i < loc-1; i++){
-        curr = this->list->next;
-        this->list = this->list->next;
+        curr = temp->next;
+        temp = temp->next;
     }
     newNode->next = curr->next;
-    this->list->next = newNode;
+    temp->next = newNode;
 }
 
 Node* SingleLinked::Next(int loc){
