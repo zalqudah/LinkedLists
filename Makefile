@@ -7,8 +7,6 @@ OBJECTS = $(SRCS: .hpp=.o)
 main: $(OBJECTS) testBench.cpp SingleLinked.cpp Node.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-
-
 clean:
 	rm -rf *.dSYM
 	$(RM) *.o *.gc* test/*.o core main
