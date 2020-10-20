@@ -47,29 +47,14 @@ void SingleLinked::push(int ndat){
 }
 
 void SingleLinked::insert(int loc, int ndat){
-    //Node* temp = this->list;
-
-    Node* newNode = new Node();
-    newNode->data = ndat;
-
-    if(this->list == NULL){
-        newNode->next = NULL;
-        this->list = newNode;
-        return;
+    Node* curr;
+    Node* newNode = new Node(ndat);
+    for(int i = 0; i < loc-1; i++){
+        curr = this->list->next;
+        this->list = this->list->next;
     }
-    /* Extract list after loc *//*
-     -------  Next(int loc) ------
-    list: A B C D E F G
-    loc 3
-    returns:  D E F G 
-    */
-    newNode->next = Next(loc);
-    this->list = newNode;
-    /* Place node at loc *//*
-    list: A B C D E F G
-    node: data: X loc: 3
-    new list: A B C X D E F G
-    */
+    newNode->next = curr->next;
+    this->list->next = newNode;
 }
 
 Node* SingleLinked::Next(int loc){
@@ -81,4 +66,12 @@ Node* SingleLinked::Next(int loc){
     return list->next;
 }
 
+void SingleLinked::DeleteAfter(int loc){
+    int iter = 0;
+    while((list->next != NULL) && (iter < loc-1)){
+        list = list->next;
+        iter++;
+    }
+    list->next = NULL;
+}
 

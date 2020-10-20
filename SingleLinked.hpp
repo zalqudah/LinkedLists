@@ -8,6 +8,7 @@ class SingleLinked{
     private:
         Node* list;
         Node* Next(int loc);
+        void DeleteAfter(int loc);
     public:
         SingleLinked();
         ~SingleLinked();

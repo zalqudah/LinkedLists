@@ -4,3 +4,11 @@
 using namespace std;
 
 //Space to define functions of a node if needed
+Node::Node(){
+    this->data = 0;
+    this->next = NULL; // Broke the code
+}
+Node(int data){
+    this->data = data;
+    this->next = NULL; //Broke the code
+    }
