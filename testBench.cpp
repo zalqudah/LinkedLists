@@ -20,16 +20,12 @@ int main(){
     list.push(-2);
     out << "Pushed: " << list;
     /*
-    //         loc        data
-        list.insert(3, 777);
+    //         loc        data*/
+    list.insert(3, 777);
 
     //    broke system on local
     //    output continued forever
-
-        out << "Insert: " << list;
-
-
-
-    */
+    out << "Insert 777 at location 3:\nExpected: -2 -1 0 777 1 2 3 4 \n";
+    out << "Insert: " << list;
     out.close();
 }
