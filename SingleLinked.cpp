@@ -5,11 +5,11 @@
 using namespace std;
 
 SingleLinked::SingleLinked(){
-    Node* list = NULL;
+    this->list = NULL;
 }
 
 SingleLinked::~SingleLinked(){
-    delete list;
+    delete this->list;
 }
 
 void SingleLinked::append(int ndat){
