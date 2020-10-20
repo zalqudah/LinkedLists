@@ -47,7 +47,7 @@ void SingleLinked::push(int ndat){
 }
 
 void SingleLinked::insert(int loc, int ndat){
-    Node* temp = this->list;
+    //Node* temp = this->list;
 
     Node* newNode = new Node();
     newNode->data = ndat;
