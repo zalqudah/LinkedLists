@@ -21,9 +21,9 @@ int main(){
     out << "Pushed: " << list;
     /*
     //         loc        data*/
-    list.insert(3, 777);
     list.insert(0, 888);
-
+    list.insert(2, 777);
+    list.insert(1, 333);
     //    broke system on local
     //    output continued forever
     out << "Insert 888 at location 0:\nExpected: 888 -2 -1 0 777 1 2 3 4 \n";
