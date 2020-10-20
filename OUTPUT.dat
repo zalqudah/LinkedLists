@@ -4,5 +4,5 @@ Pushed: -2 -1 0 1 2 3 4
 list len: 7
 Insert 777 at location 3:
 Expected: -2 -1 0 777 1 2 3 4 
-Insert: 0 777 1 2 3 4 
-list len: 6
+Insert: -2 -1 0 777 1 2 3 4 
+list len: 8
