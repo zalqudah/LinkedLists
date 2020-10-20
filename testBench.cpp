@@ -6,6 +6,6 @@ using namespace std;
 
 int main(){
     // This  is a testbench and demonstration of Linked-Lists
-    SingleLinked list();
+    SingleLinked list = SingleLinked();
     list.append(0);
 }

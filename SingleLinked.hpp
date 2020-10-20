@@ -4,15 +4,15 @@
 #include "Node.hpp"
 
 class SingleLinked{
-    public:
-        Node* list;
     private:
+        Node* list;
+    public:
         SingleLinked();
         ~SingleLinked();
-        void append(/*Node** ref,*/ int ndat);
+        void append(int ndat);
         //void push(Node** ref, int ndat);
         //void insertAfter(Node* prev, int ndat);
 };
 
 
-#endif;
+#endif
