@@ -8,7 +8,7 @@ Node::Node(){
     this->data = 0;
     this->next = NULL; // Broke the code
 }
-Node(int data){
+Node::Node(int data){
     this->data = data;
     this->next = NULL; //Broke the code
-    }
+}
