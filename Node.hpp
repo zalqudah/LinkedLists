@@ -8,11 +8,11 @@ class Node{
         Node* next;
     Node(){
         this->data = 0;
-        this->next = NULL;
+        //this->next = NULL; // Broke the code
     }
     Node(int data){
         this->data = data;
-        this->next = NULL;
+        //this->next = NULL; //Broke the code
     }
 };
 
