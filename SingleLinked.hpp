@@ -2,6 +2,7 @@
 #define SingleLinked_HPP
 
 #include "Node.hpp"
+#include <iostream>
 
 class SingleLinked{
     private:
