@@ -12,7 +12,9 @@ class SingleLinked{
         ~SingleLinked();
         void append(int ndat);
         void push(int ndat);
-        //void insertAfter(Node* prev, int ndat);
+       // void insert(int loc, int ndat);
+        Node* Next(int loc);
+
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
             int n = 0;
             Node* ll = L.list;

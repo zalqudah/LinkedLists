@@ -42,11 +42,38 @@ void SingleLinked::push(int ndat){
     newNode->data = ndat;
     newNode->next = this->list;
     last = newNode;
-    
+
     this->list = last;
 }
 
+/*void SingleLinked::insert(int loc, int ndat){
+    Node* temp = this->list;
 
+    Node* newNode = new Node();
+    newNode->data = ndat;
 
+    if(this->list == NULL){
+        newNode->next = NULL;
+        this->list = newNode;
+        return;
+    }
+
+    int iter = 0;
+    while((temp->next != NULL) && (iter < loc-1)){
+        temp = temp->next;
+        iter++;
+    }
+    newNode->next = temp;
+    temp->next = newNode;
+}*/
+
+Node* SingleLinked::Next(int loc){
+    int iter = 0;
+    while((list->next != NULL) && (iter < loc-1)){
+        list = list->next;
+        iter++;
+    }
+    return list->next;
+}
 
 
