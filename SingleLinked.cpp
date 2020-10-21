@@ -113,6 +113,22 @@ Node* SingleLinked::pop(){
     return out;
 }
 
+void SingleLinked::reverse(){
+    Node* curr = list;
+    Node* prev = NULL;
+    Node* next = NULL;
+
+    while(curr != NULL){
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    list = prev;
+
+    //Look idk either but it works
+}
+
 Node* SingleLinked::Next(int loc){
     int iter = 0;
     Node* temp = list;

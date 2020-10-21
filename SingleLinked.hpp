@@ -17,6 +17,7 @@ class SingleLinked{
         void push(int ndat);
         void insert(int loc, int ndat);
         void remove(int loc);
+        void reverse();
         int size();
         Node* pop();
 

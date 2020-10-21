@@ -34,5 +34,7 @@ int main(){
     out << "Popped: " << list;
     out << "Popped out: " << listPop;
     
+    list.reverse();
+    out << "Reversed: " << list;
     out.close();
 }
