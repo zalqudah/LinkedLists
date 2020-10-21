@@ -64,11 +64,12 @@ void SingleLinked::insert(int loc, int ndat){
 
 Node* SingleLinked::Next(int loc){
     int iter = 0;
-    while((list->next != NULL) && (iter < loc-1)){
-        list = list->next;
+    Node* temp = list;
+    while((temp->next != NULL) && (iter < loc-1)){
+        temp = temp->next;
         iter++;
     }
-    return list->next;
+    return temp->next;
 }
 
 void SingleLinked::DeleteAfter(int loc){

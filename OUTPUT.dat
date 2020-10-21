@@ -1,1 +1,8 @@
-
+Append: 0 1 2 3 4 
+list len: 5
+Pushed: -2 -1 0 1 2 3 4 
+list len: 7
+Insert 888 at location 0:
+Expected: 888 -2 -1 0 777 1 2 3 4 
+Insert: 888 333 -2 777 -1 0 1 2 3 4 
+list len: 10
