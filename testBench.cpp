@@ -36,5 +36,8 @@ int main(){
     
     list.reverse();
     out << "Reversed: " << list;
+
+    out << "At 1: " << list.at(1) << endl;
+    out << "At 5: " << list.at(5) << endl;
     out.close();
 }

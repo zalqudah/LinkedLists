@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/*##################################
+    Constructors & Deconstructors
+####################################*/
+
 SingleLinked::SingleLinked(){
     this->list = NULL;
 }
@@ -15,6 +19,10 @@ SingleLinked::SingleLinked(Node* l){
 SingleLinked::~SingleLinked(){
     delete this->list;
 }
+
+/*##################################
+               Data IO
+####################################*/
 
 void SingleLinked::append(int ndat){
     Node* last = list;
@@ -85,14 +93,16 @@ void SingleLinked::remove(int loc){
 
 }
 
-int SingleLinked::size(){
-    Node* temp = this->list;
-    int iter = 1;
-    while(temp->next != NULL){
-        iter++;
+int SingleLinked::at(int loc){
+    if(list == NULL)
+        return -1;
+    if(loc == 0)
+        return list->data;
+    Node* temp = list;
+    for(int i = 0; i < loc; i++){
         temp = temp->next;
     }
-    return iter;
+    return temp->data;
 }
 
 Node* SingleLinked::pop(){
@@ -113,6 +123,10 @@ Node* SingleLinked::pop(){
     return out;
 }
 
+/*##################################
+                Manips
+####################################*/
+
 void SingleLinked::reverse(){
     Node* curr = list;
     Node* prev = NULL;
@@ -129,22 +143,20 @@ void SingleLinked::reverse(){
     //Look idk either but it works
 }
 
-Node* SingleLinked::Next(int loc){
-    int iter = 0;
-    Node* temp = list;
-    while((temp->next != NULL) && (iter < loc-1)){
-        temp = temp->next;
+/*##################################
+                Metrics
+####################################*/
+
+int SingleLinked::size(){
+    Node* temp = this->list;
+    int iter = 1;
+    while(temp->next != NULL){
         iter++;
+        temp = temp->next;
     }
-    return temp->next;
+    return iter;
 }
 
-void SingleLinked::DeleteAfter(int loc){
-    int iter = 0;
-    while((list->next != NULL) && (iter < loc-1)){
-        list = list->next;
-        iter++;
-    }
-    list->next = NULL;
-}
+
+
 

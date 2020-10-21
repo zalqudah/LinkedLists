@@ -7,19 +7,27 @@
 class SingleLinked{
     private:
         Node* list;
-        Node* Next(int loc);
-        void DeleteAfter(int loc);
+
     public:
+        //De/Constructors
         SingleLinked();
         SingleLinked(Node* l);
         ~SingleLinked();
+
+        //Data io
         void append(int ndat);
         void push(int ndat);
         void insert(int loc, int ndat);
         void remove(int loc);
-        void reverse();
-        int size();
+        int at(int loc);
         Node* pop();
+
+        //Manips
+        void reverse();
+
+        //Metrics
+        int size();
+        
 
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
             Node* ll = L.list;
