@@ -15,6 +15,7 @@ class SingleLinked{
         void append(int ndat);
         void push(int ndat);
         void insert(int loc, int ndat);
+        void remove(int loc);
 
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
             int n = 0;

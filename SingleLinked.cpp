@@ -62,6 +62,25 @@ void SingleLinked::insert(int loc, int ndat){
 	return;
 }
 
+void SingleLinked::remove(int loc){
+	if(this->list == NULL)
+        return;
+
+    if(loc == 0){
+        this->list = this->list->next;
+        return;
+    }
+    Node* temp = list;
+	Node* newNode = new Node();
+	for(int i = 0; i < loc-1; i++){
+		temp = temp->next;
+	}
+	newNode = temp->next->next;
+	temp->next = newNode;
+	return;
+
+}
+
 Node* SingleLinked::Next(int loc){
     int iter = 0;
     Node* temp = list;

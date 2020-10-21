@@ -24,5 +24,10 @@ int main(){
     list.insert(2, 777);
     list.insert(1, 333);
     out << "Insert: " << list;
+
+    list.remove(1);
+    out << "Remove: " << list;
+    list.remove(0);
+    out << "Remove: " << list;
     out.close();
 }
