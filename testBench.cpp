@@ -29,5 +29,6 @@ int main(){
     out << "Remove: " << list;
     list.remove(0);
     out << "Remove: " << list;
+    out << "LENGTH: " << list.size();
     out.close();
 }

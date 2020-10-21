@@ -81,6 +81,16 @@ void SingleLinked::remove(int loc){
 
 }
 
+int SingleLinked::size(){
+    Node* temp = this->list;
+    int iter = 0;
+    while(temp->next != NULL){
+        iter++;
+        temp = temp->next;
+    }
+    return iter;
+}
+
 Node* SingleLinked::Next(int loc){
     int iter = 0;
     Node* temp = list;

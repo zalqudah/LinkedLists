@@ -16,17 +16,16 @@ class SingleLinked{
         void push(int ndat);
         void insert(int loc, int ndat);
         void remove(int loc);
+        int size();
 
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
-            int n = 0;
             Node* ll = L.list;
             while(ll != NULL){
                 out << ll->data << " ";
                 ll = ll->next;
-                n++;
             }
             out << std::endl;
-            out << "list len: " << n << std::endl;
+            //out << "list len: " << std::endl;
             return out;
         }
 };
