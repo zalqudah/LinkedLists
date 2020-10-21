@@ -26,9 +26,13 @@ int main(){
     out << "Insert: " << list;
 
     list.remove(1);
-    out << "Remove: " << list;
     list.remove(0);
     out << "Remove: " << list;
-    out << "LENGTH: " << list.size();
+    out << "LENGTH: " << list.size() << endl;
+
+    SingleLinked listPop(list.pop());
+    out << "Popped: " << list;
+    out << "Popped out: " << listPop;
+    
     out.close();
 }

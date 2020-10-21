@@ -8,6 +8,10 @@ SingleLinked::SingleLinked(){
     this->list = NULL;
 }
 
+SingleLinked::SingleLinked(Node* l){
+    this->list = l;
+}
+
 SingleLinked::~SingleLinked(){
     delete this->list;
 }
@@ -89,6 +93,24 @@ int SingleLinked::size(){
         temp = temp->next;
     }
     return iter;
+}
+
+Node* SingleLinked::pop(){
+    Node* out = new Node();
+    if(this->list == NULL)
+        return out;
+    if(size()-1 <= 0){
+        this->list = NULL;
+        return out;
+    }
+    Node* temp = this->list;
+    for(int i = 0; i < size()-2; i++){
+        temp = temp->next;
+    }
+    out->data = temp->next->data;
+    out->next = NULL;
+    temp->next = NULL;
+    return out;
 }
 
 Node* SingleLinked::Next(int loc){

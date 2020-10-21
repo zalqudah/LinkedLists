@@ -11,12 +11,14 @@ class SingleLinked{
         void DeleteAfter(int loc);
     public:
         SingleLinked();
+        SingleLinked(Node* l);
         ~SingleLinked();
         void append(int ndat);
         void push(int ndat);
         void insert(int loc, int ndat);
         void remove(int loc);
         int size();
+        Node* pop();
 
         friend std::ostream &operator<< (std::ostream &out, const SingleLinked &L){
             Node* ll = L.list;
