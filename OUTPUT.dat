@@ -8,3 +8,7 @@ Popped out: 4
 Reversed: 3 2 1 0 -1 777 -2 
 At 1: 2
 At 5: 777
+Past List @ 7: -1111
+Sub list 1-5: 2 1 0 -1 777 
+2 1 0 -1 777 
+3 2 1 0 -1 777 

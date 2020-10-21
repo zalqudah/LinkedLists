@@ -94,10 +94,11 @@ void SingleLinked::remove(int loc){
 }
 
 int SingleLinked::at(int loc){
-    if(list == NULL)
-        return -1;
+    if((list == NULL) || (loc > size()-1))
+        return -1111;
     if(loc == 0)
         return list->data;
+
     Node* temp = list;
     for(int i = 0; i < loc; i++){
         temp = temp->next;
@@ -105,23 +106,6 @@ int SingleLinked::at(int loc){
     return temp->data;
 }
 
-Node* SingleLinked::pop(){
-    Node* out = new Node();
-    if(this->list == NULL)
-        return out;
-    if(size()-1 <= 0){
-        this->list = NULL;
-        return out;
-    }
-    Node* temp = this->list;
-    for(int i = 0; i < size()-2; i++){
-        temp = temp->next;
-    }
-    out->data = temp->next->data;
-    out->next = NULL;
-    temp->next = NULL;
-    return out;
-}
 
 /*##################################
                 Manips
@@ -141,6 +125,36 @@ void SingleLinked::reverse(){
     list = prev;
 
     //Look idk either but it works
+}
+
+Node* SingleLinked::pop(){
+    Node* out = new Node();
+    if(this->list == NULL)
+        return out;
+    if(size()-1 <= 0){
+        this->list = NULL;
+        return out;
+    }
+    Node* temp = this->list;
+    for(int i = 0; i < size()-2; i++){
+        temp = temp->next;
+    }
+    out->data = temp->next->data;
+    out->next = NULL;
+    temp->next = NULL;
+    return out;
+}
+//COPY ORIGINAL FIRST
+//Does not return sublist, becomes sublist
+void SingleLinked::sublist(int from, int to){
+    Node* temp = list;
+    for(int i = 0; i < to; i++){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    for(int i = 0; i < from; i++){
+        list = list->next;
+    }
 }
 
 /*##################################

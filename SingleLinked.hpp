@@ -20,11 +20,11 @@ class SingleLinked{
         void insert(int loc, int ndat);
         void remove(int loc);
         int at(int loc);
-        Node* pop();
 
         //Manips
         void reverse();
-
+        Node* pop();
+        void sublist(int from, int to);
         //Metrics
         int size();
         

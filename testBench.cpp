@@ -39,5 +39,15 @@ int main(){
 
     out << "At 1: " << list.at(1) << endl;
     out << "At 5: " << list.at(5) << endl;
+    //past list length
+    out << "Past List @ 7: " << list.at(7) << endl;
+    SingleLinked l = list;
+    list.sublist(1,5);
+    out << "Sub list 1-5: " << list;
+    out << list;
+    out << l;
+    /*out << "Sub list 0-3: " << SingleLinked(list.sublist(0,3));
+    out << list;
+    out << "Sub list 0-end: " << SingleLinked(list.sublist(0,list.size()));*/
     out.close();
 }
