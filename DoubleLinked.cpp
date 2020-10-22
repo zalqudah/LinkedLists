@@ -23,6 +23,8 @@ void DoubleLinked::push(int ndat){
     Node* newNode = new Node(ndat);
     newNode->next = this->list;
     newNode->prev = NULL;
+    if(this->list != NULL)
+        this->list->prev = newNode;
     this->list = newNode;
 }
 

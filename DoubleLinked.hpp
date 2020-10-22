@@ -13,6 +13,7 @@ class DoubleLinked{
         ~DoubleLinked();
 
         void push(int ndat);
+        void append(int ndat);
         void replace(int loc, int ndat);
 
         friend std::ostream &operator<< (std::ostream &out, const DoubleLinked &L){
