@@ -4,7 +4,10 @@ CXXFLAGS = -g -std=c++11 -Wall
 SRCS = $(wildcard *.hpp)
 OBJECTS = $(SRCS: .hpp=.o)
 
-main: $(OBJECTS) testBench.cpp SingleLinked.cpp Node.cpp
+SingleLinked: $(OBJECTS) testSinle.cpp SingleLinked.cpp Node.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+DoubleLinked: $(OBJECTS) testDouble.cpp DoubleLinked.cpp Node.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:

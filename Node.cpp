@@ -8,10 +8,10 @@ using namespace std;
 Node::Node(){
     this->data = 0;
     this->next = NULL; // Broke the code in hpp file
-    this->prev = NULL;
+    this->prev = NULL; // Broke the code in hpp file
 }
 Node::Node(int data){
     this->data = data;
-    this->next = NULL; //Broke the code in hpp file
-    this->prev = NULL;
+    this->next = NULL; // Broke the code in hpp file
+    this->prev = NULL; // Broke the code in hpp file
 }
