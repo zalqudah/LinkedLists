@@ -12,5 +12,7 @@ int main(){
     dl.push(0);
     dl.replace(0,-1);
     dl.replace(1,1);
+    dl.append(5);
+    dl.insert(0,3);
     cout << dl;
 }

@@ -28,15 +28,40 @@ void DoubleLinked::push(int ndat){
     this->list = newNode;
 }
 
+void DoubleLinked::append(int ndat){
+    Node* newNode = new Node(ndat);
+    Node* iter = this->list;
+    while(iter->next != NULL){
+        iter = iter->next;
+    }
+    newNode->prev = iter;
+    iter->next = newNode;
+}
+
+void DoubleLinked::insert(int loc, int ndat){
+    if(list == NULL || loc == 0){
+        push(ndat);
+        return;
+    }
+    Node* newNode = new Node(ndat);
+    Node* iter = this->list;
+    for(int i = 0; i < loc-1; i++){
+        iter = iter->next;
+    }
+    newNode->next = iter->next;
+    newNode->prev = iter->prev;
+    iter->next = newNode;
+}
+
 void DoubleLinked::replace(int loc, int ndat){
     if(list == NULL || loc == 0){
         push(ndat);
         return;
     }
-    Node* temp = this->list;
+    Node* iter = this->list;
     for(int i = 0; i < loc; i++){
-        temp = temp->next;
+        iter = iter->next;
     }
-    temp->data = ndat;
+    iter->data = ndat;
 
 }
