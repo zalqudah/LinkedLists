@@ -17,6 +17,31 @@ DoubleLinked::DoubleLinked(Node* node){
     //this->length = -1;
 }
 
+DoubleLinked::DoubleLinked(const DoubleLinked &L){
+    Node* NEXT = NULL;
+    Node* CURR = NULL;
+    if(L.list == NULL){
+        this->list = NULL;
+    }
+    else{
+        this->list = new Node();
+        list->data = L.list->data;
+        Node* HEAD = L.list;
+        NEXT = L.list->next;
+        CURR = this->list;
+        while((NEXT != NULL) || (NEXT != HEAD)){
+            CURR->next = new Node();
+            CURR->data = NEXT->data;
+            CURR = CURR->next;
+            CURR->prev = NEXT->prev;
+            NEXT = NEXT->next;
+        }
+        if(NEXT == HEAD){
+            CURR->next = NULL;
+        }
+    }
+}
+
 DoubleLinked::~DoubleLinked(){
     delete this->list;
 }
@@ -96,9 +121,17 @@ void DoubleLinked::stitch(){
 }
 
 void DoubleLinked::rip(int loc){
+    //Cant rip non-circular list
     if(isCircular() == false){
         return;
     }
+    //0 is a special case
+    if(loc == 0){
+        this->list->prev->next = NULL;
+        this->list->prev = NULL;
+        return;
+    }
+    //All other locations
     Node* iter = this->list;
     Node* cursor = NULL;
     for(int i = 0; i < loc; i++){
@@ -108,6 +141,17 @@ void DoubleLinked::rip(int loc){
     cursor->next = NULL;
     iter->prev = NULL;
     this->list = iter;
+}
+
+void DoubleLinked::shift(int i){
+    if(!isCircular()){
+        stitch();
+        rip(i);
+    }
+    else{
+        rip(i);
+        stitch();
+    }
 }
 
 bool DoubleLinked::isCircular(){

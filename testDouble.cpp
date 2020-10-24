@@ -16,10 +16,14 @@ int main(){
     dl.insert(0,3);
     dl.insert(7,7);
     dl.stitch(); //Converts to circular list
-    //dl.append(35);
+    dl.append(35);
     dl.push(36);
     dl.push(36);
     dl.push(36);
-    dl.rip(5);
+    dl.rip(3); //Converts to non-circular list
+    dl.shift(1);
+    DoubleLinked F = dl;
+    //dl = dl + 1;
     cout << dl;
+    cout << dl.isCircular() << endl;
 }

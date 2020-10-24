@@ -10,6 +10,7 @@ class DoubleLinked{
     public:
         DoubleLinked();
         DoubleLinked(Node* node);
+        DoubleLinked(const DoubleLinked &L);
         ~DoubleLinked();
 
         void push(int ndat);
@@ -19,8 +20,17 @@ class DoubleLinked{
 
         void stitch(); //Converts to circular list
         void rip(int loc); //Will only rip circular lists
+        void shift(int i);
 
         bool isCircular();
+
+        Node* Get();
+
+        /*DoubleLinked operator+ (const int& i){
+            DoubleLinked ll = DoubleLinked(this->list);
+            //ll.shift(i);
+            return ll;
+        }*/
 
         friend std::ostream &operator<< (std::ostream &out, const DoubleLinked &L){
             Node* ll = L.list;
